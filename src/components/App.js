@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router } from 'react-router-dom'
 
 import Header from './Header';
 import Main from './Main';
@@ -40,7 +39,6 @@ export default class App extends Component {
   render() {
     const { classes } = this.props;
     return (
-    <Router>
       <div className={classes.root}>
         {/* <React.Fragment> */}
           {/* <CssBaseline /> */}
@@ -55,7 +53,6 @@ export default class App extends Component {
           <Main />
         {/* </React.Fragment> */}
       </div>
-    </Router>
     );
   }
 }

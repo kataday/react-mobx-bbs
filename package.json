@@ -5,6 +5,10 @@
   "dependencies": {
     "@material-ui/icons": "^1.0.0-beta.43",
     "classnames": "^2.2.5",
+    "koa": "^2.5.1",
+    "koa-bodyparser": "^4.2.0",
+    "koa-router": "^7.4.0",
+    "koa-static": "^4.0.2",
     "material-ui": "^1.0.0-beta.43",
     "mobx": "^4.2.0",
     "mobx-react": "^5.0.0",
@@ -20,6 +24,17 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.46",
+    "@babel/core": "^7.0.0-beta.46",
+    "@babel/plugin-proposal-class-properties": "^7.0.0-beta.46",
+    "@babel/plugin-proposal-decorators": "^7.0.0-beta.46",
+    "@babel/polyfill": "^7.0.0-beta.46",
+    "@babel/preset-env": "^7.0.0-beta.46",
+    "@babel/preset-react": "^7.0.0-beta.46",
+    "@babel/register": "^7.0.0-beta.46",
+    "babel-preset-react-app": "^3.1.1",
+    "babel-register": "^6.26.0",
+    "nodemon": "^1.17.3",
     "react-app-rewire-mobx": "^1.0.8",
     "react-app-rewired": "^1.5.2",
     "react-scripts": "^1.1.4",
