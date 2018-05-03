@@ -4,11 +4,11 @@ import bodyParser from 'koa-bodyparser';
 import path from 'path';
 import fs from 'fs';
 import React from 'react';
-import {renderToString} from 'react-dom/server';
-import {Route, StaticRouter} from 'react-router-dom';
+import { renderToStaticMarkup, renderToString } from 'react-dom/server';
+import { StaticRouter } from 'react-router-dom';
 import App from '../../src/components/App';
-import {promisify} from 'util';
-// const readFile = promisify(fs.readFile);
+import { promisify } from 'util';
+
 // A simple helper function to prepare the HTML markup
 // const prepHTML = (data, { html, head, body }) => {
 const prepHTML = (data, { body }) => {
@@ -27,7 +27,7 @@ router.get('/', bodyParser(), async (ctx, next) => {
   // const html = await fs.readFile(filePath, 'utf8', (err, htmlData) => {
   const htmlData = await promisify(fs.readFile)(filePath, 'utf8');
   // Render App in React
-  const routeMarkup = renderToString(
+  const routeMarkup = renderToStaticMarkup(
     <StaticRouter location={ctx.url} context={{}}>
       <App />
     </StaticRouter>
@@ -37,7 +37,7 @@ router.get('/', bodyParser(), async (ctx, next) => {
     // head: helmet.title.toString() + helmet.meta.toString() + helmet.link.toString(),
     body: routeMarkup
   });
-console.log(html);
+
   ctx.body = html;
 });
 
